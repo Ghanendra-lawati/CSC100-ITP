@@ -1,0 +1,129 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMp/mFw9B/sZ9eAnQ6ncRCG",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Ghanendra-lawati/CSC100-ITP/blob/main/Asignment_clean%20version%20ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 3,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "26mRFU__DyKo",
+        "outputId": "00ab9c86-7652-4eb4-f5a9-0a1ce22975cb"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\n",
+            "====== Shopping List Manager ======\n",
+            "1. View List\n",
+            "2. Add to List\n",
+            "3. Remove from List\n",
+            "4. Count Total Items\n",
+            "5. Exit\n",
+            "Enter your choice: 2\n",
+            "How many items do you want to add? 2\n",
+            "Enter an item to add: apple\n",
+            "apple added.\n",
+            "Enter an item to add: orange\n",
+            "orange added.\n",
+            "Updated shopping list: ['apple', 'orange']\n",
+            "\n",
+            "====== Shopping List Manager ======\n",
+            "1. View List\n",
+            "2. Add to List\n",
+            "3. Remove from List\n",
+            "4. Count Total Items\n",
+            "5. Exit\n",
+            "Enter your choice: 5\n",
+            "Exiting program. Goodbye!\n"
+          ]
+        }
+      ],
+      "source": [
+        "shopping_list = []   # define the list before the loop\n",
+        "\n",
+        "while True:\n",
+        "    print(\"\\n====== Shopping List Manager ======\")\n",
+        "    print(\"1. View List\")\n",
+        "    print(\"2. Add to List\")\n",
+        "    print(\"3. Remove from List\")\n",
+        "    print(\"4. Count Total Items\")\n",
+        "    print(\"5. Exit\")\n",
+        "    choice = input(\"Enter your choice: \")\n",
+        "\n",
+        "    if choice == \"1\":\n",
+        "        if len(shopping_list) == 0:\n",
+        "            print(\"Your shopping list is empty.\")\n",
+        "        else:\n",
+        "            print(\"Your shopping list:\", shopping_list)\n",
+        "\n",
+        "    elif choice == \"2\":\n",
+        "        quantity = input(\"How many items do you want to add? \")\n",
+        "        for _ in range(int(quantity)):\n",
+        "            item_add = input(\"Enter an item to add: \").lower()\n",
+        "            shopping_list.append(item_add)\n",
+        "            print(item_add, \"added.\")\n",
+        "        print(\"Updated shopping list:\", shopping_list)\n",
+        "\n",
+        "    elif choice == \"3\":\n",
+        "        if len(shopping_list) == 0:\n",
+        "            print(\"Your list is empty, nothing to remove.\")\n",
+        "        else:\n",
+        "            item_remove = input(\"Enter an item to remove: \").lower()\n",
+        "            if item_remove in shopping_list:\n",
+        "                shopping_list.remove(item_remove)\n",
+        "                print(item_remove, \"removed.\")\n",
+        "            else:\n",
+        "                print(item_remove, \"is not in your list.\")\n",
+        "        print(\"Updated shopping list:\", shopping_list)\n",
+        "\n",
+        "    elif choice == \"4\":\n",
+        "        print(\"Total items in your list:\", len(shopping_list))\n",
+        "\n",
+        "    elif choice == \"5\":\n",
+        "        print(\"Exiting program. Goodbye!\")\n",
+        "        break\n",
+        "\n",
+        "    else:\n",
+        "        print(\"Invalid choice, please enter a number from 1 to 5.\")\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n"
+      ]
+    }
+  ]
+}
